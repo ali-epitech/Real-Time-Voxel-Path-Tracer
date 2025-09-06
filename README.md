@@ -1,1 +1,1 @@
-# Voxel-Real-Time-Path-Tracer
+# Real-Time-Voxel-Path-Tracer
