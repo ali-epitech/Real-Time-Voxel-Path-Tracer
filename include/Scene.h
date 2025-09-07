@@ -10,7 +10,7 @@
             bool hit(const Ray& r, float t_min, float t_max, HitRecord& rec) const;
 
         private:
-            std::vector<std::shared_ptr<Hittable>> this->objects;
+            std::vector<std::shared_ptr<Hittable>> objects;
     };
 
 #endif /* SCENE_H */
