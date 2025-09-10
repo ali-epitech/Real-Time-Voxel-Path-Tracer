@@ -4,6 +4,7 @@
 
     class Ray {
         public:
+            Ray() = default;
             Ray(const glm::vec3& origin, const glm::vec3& direction);
             glm::vec3 at(float t) const;
             // getters

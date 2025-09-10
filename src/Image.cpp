@@ -9,12 +9,12 @@ Image::Image(int width, int height)
     this->pixels.resize(width * height * 3, 0); // initialize all pixels to black
 }
 
-void Image::setPixel(int x, int y, unsigned char r, unsigned char g, unsigned char b)
+void Image::setPixel(int x, int y, glm::vec3& color)
 {
     int index = (y * this->width + x) * 3; // flat index
-    this->pixels[index] = r;
-    this->pixels[index + 1] = g;
-    this->pixels[index + 2] = b;
+    this->pixels[index] = static_cast<unsigned char>(color.r * 255);
+    this->pixels[index + 1] = static_cast<unsigned char>(color.g * 255);
+    this->pixels[index + 2] = static_cast<unsigned char>(color.b * 255);
 }
 
 void Image::savePPM(const std::string& filename)

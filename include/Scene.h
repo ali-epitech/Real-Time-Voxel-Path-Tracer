@@ -2,12 +2,17 @@
 
 #ifndef SCENE_H
     #define SCENE_H
-    #include <vector>
 
-    class Scene {
+    #include <vector>
+    #include <memory>
+    #include "Hittable.h"
+    #include "HitRecord.h"
+
+    class Scene : public Hittable {
         public:
+            Scene() = default;
             void add(std::shared_ptr<Hittable> obj);
-            bool hit(const Ray& r, float t_min, float t_max, HitRecord& rec) const;
+            bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec, std::shared_ptr<Material>& material) const override;
 
         private:
             std::vector<std::shared_ptr<Hittable>> objects;
