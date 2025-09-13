@@ -11,7 +11,7 @@
 
     class Plane : public Hittable{
         public:
-            Plane(const glm::vec3& point, const glm::vec3& normal, const glm::vec3& uAxis, const glm::vec3& vAxis, float halfWidth, float halfHeight, std::shared_ptr<Material>& material);
+            Plane(const glm::vec3& point, const glm::vec3& normal, const glm::vec3& uAxis, const glm::vec3& vAxis, float halfWidth, float halfHeight, const std::shared_ptr<Material>& material);
             bool hit(const Ray& ray, float tMin, float tMax, HitRecord& rec, std::shared_ptr<Material>& material) const override;
             std::shared_ptr<Material> getMaterial() const { return material; }
 

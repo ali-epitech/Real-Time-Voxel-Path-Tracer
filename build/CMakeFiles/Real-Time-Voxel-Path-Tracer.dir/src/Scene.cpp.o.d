@@ -1,8 +1,7 @@
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o: \
  /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Scene.cpp \
- /usr/include/stdc-predef.h \
- /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/Scene.h \
- /usr/include/c++/15/vector /usr/include/c++/15/bits/requires_hosted.h \
+ /usr/include/stdc-predef.h /usr/include/c++/15/iostream \
+ /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h \
@@ -11,71 +10,42 @@ CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o: \
  /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h \
- /usr/include/c++/15/pstl/pstl_config.h \
- /usr/include/c++/15/bits/stl_algobase.h \
- /usr/include/c++/15/bits/functexcept.h \
- /usr/include/c++/15/bits/exception_defines.h \
- /usr/include/c++/15/bits/cpp_type_traits.h \
- /usr/include/c++/15/bits/version.h /usr/include/c++/15/type_traits \
- /usr/include/c++/15/ext/type_traits.h \
- /usr/include/c++/15/ext/numeric_traits.h \
- /usr/include/c++/15/bits/stl_pair.h /usr/include/c++/15/bits/move.h \
- /usr/include/c++/15/bits/utility.h \
- /usr/include/c++/15/bits/stl_iterator_base_types.h \
- /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/15/bits/concept_check.h \
- /usr/include/c++/15/debug/assertions.h \
- /usr/include/c++/15/bits/stl_iterator.h \
- /usr/include/c++/15/bits/ptr_traits.h /usr/include/c++/15/debug/debug.h \
- /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
- /usr/include/c++/15/concepts /usr/include/c++/15/bits/allocator.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/15/bits/new_allocator.h /usr/include/c++/15/new \
- /usr/include/c++/15/bits/exception.h \
- /usr/include/c++/15/bits/memoryfwd.h \
- /usr/include/c++/15/bits/stl_construct.h \
- /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/ext/alloc_traits.h \
- /usr/include/c++/15/bits/alloc_traits.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/initializer_list \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/functional_hash.h \
- /usr/include/c++/15/bits/hash_bytes.h /usr/include/c++/15/bits/refwrap.h \
- /usr/include/c++/15/bits/invoke.h \
- /usr/include/c++/15/bits/stl_function.h \
- /usr/include/c++/15/backward/binders.h \
- /usr/include/c++/15/bits/range_access.h \
- /usr/include/c++/15/bits/vector.tcc \
- /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
- /usr/include/c++/15/bits/uses_allocator.h \
- /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
- /usr/include/c++/15/memory /usr/include/c++/15/bits/stl_tempbuf.h \
- /usr/include/c++/15/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
- /usr/include/c++/15/bits/shared_ptr.h /usr/include/c++/15/iosfwd \
- /usr/include/c++/15/bits/stringfwd.h /usr/include/c++/15/bits/postypes.h \
+ /usr/include/c++/15/pstl/pstl_config.h /usr/include/c++/15/ostream \
+ /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
+ /usr/include/c++/15/iosfwd /usr/include/c++/15/bits/stringfwd.h \
+ /usr/include/c++/15/bits/memoryfwd.h /usr/include/c++/15/bits/postypes.h \
  /usr/include/c++/15/cwchar /usr/include/wchar.h \
  /usr/include/bits/libc-header-start.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
  /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
  /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h \
- /usr/include/c++/15/bits/shared_ptr_base.h /usr/include/c++/15/typeinfo \
- /usr/include/c++/15/bits/allocated_ptr.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/ext/atomicity.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/c++/15/exception \
+ /usr/include/c++/15/bits/exception.h /usr/include/c++/15/bits/version.h \
+ /usr/include/c++/15/bits/exception_ptr.h \
+ /usr/include/c++/15/bits/exception_defines.h \
+ /usr/include/c++/15/bits/cxxabi_init_exception.h \
+ /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/hash_bytes.h \
+ /usr/include/c++/15/new /usr/include/c++/15/bits/move.h \
+ /usr/include/c++/15/type_traits \
+ /usr/include/c++/15/bits/nested_exception.h \
+ /usr/include/c++/15/bits/char_traits.h \
+ /usr/include/c++/15/bits/localefwd.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++locale.h \
+ /usr/include/c++/15/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/15/cctype \
+ /usr/include/ctype.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/c++/15/bits/ios_base.h /usr/include/c++/15/ext/atomicity.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/bits/sched.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
  /usr/include/linux/sched/types.h /usr/include/linux/types.h \
  /usr/include/asm/types.h /usr/include/asm-generic/types.h \
  /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
@@ -96,32 +66,86 @@ CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o: \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h /usr/include/c++/15/ext/concurrence.h \
- /usr/include/c++/15/exception /usr/include/c++/15/bits/exception_ptr.h \
- /usr/include/c++/15/bits/cxxabi_init_exception.h \
- /usr/include/c++/15/bits/nested_exception.h \
- /usr/include/c++/15/bits/shared_ptr_atomic.h \
- /usr/include/c++/15/bits/atomic_base.h \
- /usr/include/c++/15/bits/atomic_lockfree_defines.h \
- /usr/include/c++/15/backward/auto_ptr.h \
- /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h \
- /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/Hittable.h \
- /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
- /usr/include/c++/15/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/std_abs.h \
+ /usr/include/sys/single_threaded.h \
+ /usr/include/c++/15/bits/locale_classes.h /usr/include/c++/15/string \
+ /usr/include/c++/15/bits/allocator.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
+ /usr/include/c++/15/bits/new_allocator.h \
+ /usr/include/c++/15/bits/functexcept.h \
+ /usr/include/c++/15/bits/cpp_type_traits.h \
+ /usr/include/c++/15/bits/ostream_insert.h \
+ /usr/include/c++/15/bits/cxxabi_forced.h \
+ /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/15/bits/concept_check.h \
+ /usr/include/c++/15/debug/assertions.h \
+ /usr/include/c++/15/bits/stl_iterator_base_types.h \
+ /usr/include/c++/15/bits/stl_iterator.h \
+ /usr/include/c++/15/ext/type_traits.h \
+ /usr/include/c++/15/bits/ptr_traits.h \
+ /usr/include/c++/15/bits/stl_function.h \
+ /usr/include/c++/15/backward/binders.h \
+ /usr/include/c++/15/ext/numeric_traits.h \
+ /usr/include/c++/15/bits/stl_algobase.h \
+ /usr/include/c++/15/bits/stl_pair.h /usr/include/c++/15/bits/utility.h \
+ /usr/include/c++/15/debug/debug.h \
+ /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
+ /usr/include/c++/15/concepts /usr/include/c++/15/bits/refwrap.h \
+ /usr/include/c++/15/bits/invoke.h \
+ /usr/include/c++/15/bits/range_access.h \
+ /usr/include/c++/15/initializer_list \
+ /usr/include/c++/15/bits/basic_string.h \
+ /usr/include/c++/15/ext/alloc_traits.h \
+ /usr/include/c++/15/bits/alloc_traits.h \
+ /usr/include/c++/15/bits/stl_construct.h /usr/include/c++/15/string_view \
+ /usr/include/c++/15/bits/functional_hash.h \
+ /usr/include/c++/15/bits/string_view.tcc \
+ /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdlib \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
  /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
  /usr/include/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
  /usr/include/sys/select.h /usr/include/bits/select.h \
  /usr/include/bits/types/sigset_t.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/15/bits/specfun.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/include/c++/15/bits/std_abs.h /usr/include/c++/15/cstdio \
+ /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
+ /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/stdio.h \
+ /usr/include/c++/15/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
+ /usr/include/c++/15/bits/charconv.h \
+ /usr/include/c++/15/bits/basic_string.tcc \
+ /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
+ /usr/include/c++/15/bits/uses_allocator.h \
+ /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
+ /usr/include/c++/15/bits/locale_classes.tcc \
+ /usr/include/c++/15/system_error \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/error_constants.h \
+ /usr/include/c++/15/stdexcept /usr/include/c++/15/streambuf \
+ /usr/include/c++/15/bits/streambuf.tcc \
+ /usr/include/c++/15/bits/basic_ios.h \
+ /usr/include/c++/15/bits/locale_facets.h /usr/include/c++/15/cwctype \
+ /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/ctype_base.h \
+ /usr/include/c++/15/bits/streambuf_iterator.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/ctype_inline.h \
+ /usr/include/c++/15/bits/locale_facets.tcc \
+ /usr/include/c++/15/bits/basic_ios.tcc \
+ /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
+ /usr/include/c++/15/bits/istream.tcc \
+ /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
+ /usr/include/glm/detail/_fixes.hpp /usr/include/c++/15/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/specfun.h \
  /usr/include/c++/15/limits /usr/include/c++/15/tr1/gamma.tcc \
  /usr/include/c++/15/tr1/special_function_util.h \
  /usr/include/c++/15/tr1/bessel_function.tcc \
@@ -258,6 +282,75 @@ CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o: \
  /usr/include/glm/detail/type_half.hpp \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
  /usr/include/glm/detail/func_integer.inl \
+ /usr/include/glm/gtc/type_precision.hpp \
+ /usr/include/glm/gtc/quaternion.hpp /usr/include/glm/gtc/constants.hpp \
+ /usr/include/glm/ext/scalar_constants.hpp \
+ /usr/include/glm/ext/scalar_constants.inl \
+ /usr/include/glm/gtc/constants.inl \
+ /usr/include/glm/gtc/matrix_transform.hpp \
+ /usr/include/glm/ext/matrix_projection.hpp \
+ /usr/include/glm/ext/matrix_projection.inl \
+ /usr/include/glm/ext/matrix_clip_space.hpp \
+ /usr/include/glm/ext/matrix_clip_space.inl \
+ /usr/include/glm/ext/matrix_transform.hpp \
+ /usr/include/glm/ext/matrix_transform.inl \
+ /usr/include/glm/gtc/matrix_transform.inl \
+ /usr/include/glm/ext/vector_relational.hpp \
+ /usr/include/glm/ext/vector_relational.inl \
+ /usr/include/glm/detail/type_float.hpp \
+ /usr/include/glm/ext/quaternion_common.hpp \
+ /usr/include/glm/ext/quaternion_geometric.hpp \
+ /usr/include/glm/ext/quaternion_geometric.inl \
+ /usr/include/glm/ext/quaternion_common.inl \
+ /usr/include/glm/ext/quaternion_float.hpp \
+ /usr/include/glm/detail/type_quat.hpp \
+ /usr/include/glm/ext/quaternion_relational.hpp \
+ /usr/include/glm/ext/quaternion_relational.inl \
+ /usr/include/glm/detail/type_quat.inl \
+ /usr/include/glm/ext/quaternion_float_precision.hpp \
+ /usr/include/glm/ext/quaternion_double.hpp \
+ /usr/include/glm/ext/quaternion_double_precision.hpp \
+ /usr/include/glm/ext/quaternion_trigonometric.hpp \
+ /usr/include/glm/ext/quaternion_trigonometric.inl \
+ /usr/include/glm/ext/quaternion_transform.hpp \
+ /usr/include/glm/ext/quaternion_transform.inl \
+ /usr/include/glm/gtc/quaternion.inl /usr/include/glm/gtc/epsilon.hpp \
+ /usr/include/glm/detail/setup.hpp /usr/include/glm/gtc/epsilon.inl \
+ /usr/include/glm/gtc/vec1.hpp /usr/include/glm/ext/vector_bool1.hpp \
+ /usr/include/glm/ext/vector_bool1_precision.hpp \
+ /usr/include/glm/ext/vector_float1.hpp \
+ /usr/include/glm/ext/vector_float1_precision.hpp \
+ /usr/include/glm/ext/vector_double1.hpp \
+ /usr/include/glm/ext/vector_double1_precision.hpp \
+ /usr/include/glm/ext/vector_int1.hpp \
+ /usr/include/glm/ext/vector_int1_sized.hpp \
+ /usr/include/glm/ext/vector_uint1.hpp \
+ /usr/include/glm/ext/vector_uint1_sized.hpp \
+ /usr/include/glm/gtc/type_precision.inl \
+ /usr/include/glm/gtx/dual_quaternion.hpp \
+ /usr/include/glm/gtx/dual_quaternion.inl /usr/include/c++/15/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/glm/gtx/string_cast.inl /usr/include/c++/15/cstdarg \
+ /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/Scene.h \
+ /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/stl_tempbuf.h \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr_base.h \
+ /usr/include/c++/15/bits/allocated_ptr.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/ext/concurrence.h \
+ /usr/include/c++/15/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15/bits/atomic_base.h \
+ /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15/backward/auto_ptr.h \
+ /usr/include/c++/15/pstl/glue_memory_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/Hittable.h \
  /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/HitRecord.h \
  /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/Ray.h \
  /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include/Material.h

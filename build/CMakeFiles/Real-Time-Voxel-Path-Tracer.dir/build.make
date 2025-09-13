@@ -184,10 +184,24 @@ CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Scene.cpp -o CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.s
 
+CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/flags.make
+CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o: /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Triangle.cpp
+CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o -MF CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o.d -o CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o -c /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Triangle.cpp
+
+CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Triangle.cpp > CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.i
+
+CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Triangle.cpp -o CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.s
+
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/flags.make
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o: /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/main.cpp
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o -MF CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o.d -o CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o -c /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/main.cpp
 
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.s: cmake_force
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/flags.make
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o: /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/utils.cpp
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o -MF CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o.d -o CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o -c /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/utils.cpp
 
 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.i: cmake_force
@@ -222,6 +236,7 @@ Real__Time__Voxel__Path__Tracer_OBJECTS = \
 "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.o" \
 "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.o" \
 "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o" \
+"CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o" \
 "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o" \
 "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o"
 
@@ -236,12 +251,13 @@ Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Plan
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.o
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.o
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o
+Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/compiler_depend.ts
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Real-Time-Voxel-Path-Tracer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Real-Time-Voxel-Path-Tracer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

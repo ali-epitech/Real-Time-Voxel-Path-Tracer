@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Ray.cpp" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.o" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.o.d"
   "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Renderer.cpp" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.o" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.o.d"
   "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Scene.cpp" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o.d"
+  "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/Triangle.cpp" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o.d"
   "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/main.cpp" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o.d"
   "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/src/utils.cpp" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o.d"
   "" "Real-Time-Voxel-Path-Tracer" "gcc" "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/link.d"

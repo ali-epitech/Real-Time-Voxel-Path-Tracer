@@ -14,11 +14,11 @@ Lambertian::Lambertian(const glm::vec3& color)
 bool Lambertian::scatter(const Ray& in, const HitRecord& rec, glm::vec3& attenuation, Ray& scattered) const
 {
     (void)in;
-    glm::vec3 scatter_direction = rec.getNormal() + glm::sphericalRand(1.0f);
+    glm::vec3 scatter_direction = rec.normal + glm::sphericalRand(1.0f);
     // Catch degenerate scatter direction
     if (glm::length(scatter_direction) < 1e-8f)
-        scatter_direction = rec.getNormal();
-    scattered = Ray(rec.getPoint(), scatter_direction);
+        scatter_direction = rec.normal;
+    scattered = Ray(rec.point, scatter_direction);
     attenuation = this->color; // use the stored color
     return true;
 }

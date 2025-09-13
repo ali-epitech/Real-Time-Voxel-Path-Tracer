@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.o.d"
   "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o"
   "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o.d"
+  "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o"
+  "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o.d"
   "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o"
   "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o.d"
   "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o"
