@@ -6,5 +6,5 @@ CXX_DEFINES = -DGLM_ENABLE_EXPERIMENTAL
 
 CXX_INCLUDES = -I/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/include
 
-CXX_FLAGS = -std=gnu++17 -Wall -Wextra -pedantic -Werror -O3
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -pedantic -Werror
 

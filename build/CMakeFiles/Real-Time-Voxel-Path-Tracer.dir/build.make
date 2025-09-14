@@ -256,6 +256,9 @@ Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/compiler_depend.ts
+Real-Time-Voxel-Path-Tracer: /usr/lib64/libsfml-graphics.so.2.6.2
+Real-Time-Voxel-Path-Tracer: /usr/lib64/libsfml-window.so.2.6.2
+Real-Time-Voxel-Path-Tracer: /usr/lib64/libsfml-system.so.2.6.2
 Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Real-Time-Voxel-Path-Tracer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/link.txt --verbose=$(VERBOSE)

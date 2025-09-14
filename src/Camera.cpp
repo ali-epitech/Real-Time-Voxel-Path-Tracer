@@ -29,13 +29,40 @@ Ray Camera::getRay(float u, float v, int width, int height) const
     return Ray(origin, dir);
 }
 
-
-float Camera::getTMin() const
+void Camera::moveForward(float delta)
 {
-    return this->t_min;
+    origin += glm::normalize(-normal) * delta;
+    moved = true;
 }
 
-float Camera::getTMax() const
+void Camera::moveBackward(float delta)
 {
-    return this->t_max;
+    origin -= glm::normalize(-normal) * delta;
+    moved = true;
+}
+
+void Camera::moveRight(float delta)
+{
+    glm::vec3 right = glm::normalize(glm::cross(glm::vec3(0,1,0), -normal));
+    origin += right * delta;
+    moved = true;
+}
+
+void Camera::moveLeft(float delta)
+{
+    glm::vec3 right = glm::normalize(glm::cross(glm::vec3(0,1,0), -normal));
+    origin -= right * delta;
+    moved = true;
+}
+
+void Camera::moveUp(float delta)
+{
+    origin += glm::vec3(0,1,0) * delta;
+    moved = true;
+}
+
+void Camera::moveDown(float delta)
+{
+    origin -= glm::vec3(0,1,0) * delta;
+    moved = true;
 }

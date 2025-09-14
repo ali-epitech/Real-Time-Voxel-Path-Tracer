@@ -1,13 +1,12 @@
-#include <iostream>
-#include "Renderer.h"
+#include <SFML/Graphics.hpp>
+#include "Renderer.h" // your path tracer renderer
+#include "Scene.h"
 #include "Triangle.h"
 #include "Material.h"
-#include "Camera.h"
 
-int main()
+// Function to initialize the scene
+void initScene(Scene& scene)
 {
-    Scene scene;
-
     // ----- Materials -----
     auto red   = std::make_shared<Lambertian>(glm::vec3(0.8f, 0.2f, 0.2f));
     auto green = std::make_shared<Lambertian>(glm::vec3(0.2f, 0.8f, 0.2f));
@@ -69,22 +68,77 @@ int main()
     // Ceiling light
     scene.add(std::make_shared<Triangle>(lightBL, lightBR, lightTR, light));
     scene.add(std::make_shared<Triangle>(lightBL, lightTR, lightTL, light));
+}
 
-    // ----- Camera -----
-    Camera camera(
-        glm::vec3(0.0f, 2.5f, 15.0f), // pulled back to see the bigger room
-        glm::vec3(0.0f, 0.0f, -1.0f),
-        45.0f,
-        0.001f,
-        1000.0f
-    );
+void handleInput(sf::Event event, sf::RenderWindow& window, Camera& camera, float deltaTime)
+{
+    while (window.pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+        {
+            window.close();
+        }
+    }
 
-    // ----- Renderer -----
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        camera.moveForward(deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        camera.moveBackward(deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        camera.moveRight(deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        camera.moveLeft(deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        camera.moveUp(deltaTime);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+        camera.moveDown(deltaTime);
+}
+
+
+void update(Renderer& renderer, Camera& camera, Scene& scene, sf::Texture& texture)
+{
+    if (!renderer.isFinished()) {
+        if (camera.moved) {
+            renderer.resetAccumulation();  // clear old pixels
+            camera.moved = false;
+        } else {
+            renderer.renderNextSample(camera, scene); // accumulate new sample
+        }
+        renderer.updateTexture(texture);
+    }
+}
+
+void draw(sf::RenderWindow& window, sf::Sprite& screen) {
+    window.clear();
+    window.draw(screen);
+    window.display();
+}
+
+int main()
+{
+    int WIDTH = 800, HEIGHT = 600;
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Path Tracer");
+    sf::Texture texture;
+    texture.create(WIDTH, HEIGHT);
+    sf::Sprite screen;
+    screen.setTexture(texture);
+
+    Scene scene;
+    initScene(scene);
+    Camera camera(glm::vec3(0.0f, 2.5f, 15.0f), glm::vec3(0.0f, 0.0f, -1.0f), 45.0f, 0.001f, 1000.0f);
     glm::vec3 background_color(0.0f);
-    Renderer renderer(800, 600, 1000, 5, background_color);
-    renderer.render(camera, scene);
-    renderer.saveOutput("output.ppm");
+    Renderer renderer(WIDTH, HEIGHT, 100, 5, background_color);
 
-    std::cout << "Done! Open output.ppm." << std::endl;
+    sf::Event event;
+    sf::Clock clock;
+    float deltaTime = 0.f;
+
+    while (window.isOpen()) {
+        deltaTime = clock.restart().asSeconds();
+        handleInput(event, window, camera, deltaTime);
+        update(renderer, camera, scene, texture);
+        draw(window, screen);
+    }
+
     return 0;
 }
