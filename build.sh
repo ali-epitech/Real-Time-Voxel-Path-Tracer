@@ -1,9 +1,6 @@
 #!/bin/bash
-
-mkdir build
+mkdir -p build
 cd build
 cmake ..
-cmake --build .
-./Real-Time-Voxel-Path-Tracer   # (or pathtracer.exe on Windows)
-xdg-open ./output.ppm
-
+make
+./RealTimeGLTFViewer

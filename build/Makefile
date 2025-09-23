@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/Desktop/Real-Time-Voxel-Path-Tracer
+CMAKE_SOURCE_DIR = /home/ali/Desktop/gtf-glb-lv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build
+CMAKE_BINARY_DIR = /home/ali/Desktop/gtf-glb-lv/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/gtf-glb-lv/build/CMakeFiles /home/ali/Desktop/gtf-glb-lv/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/gtf-glb-lv/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,240 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Real-Time-Voxel-Path-Tracer
+# Target rules for targets named RealTimeGLTFViewer
 
 # Build rule for target.
-Real-Time-Voxel-Path-Tracer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Real-Time-Voxel-Path-Tracer
-.PHONY : Real-Time-Voxel-Path-Tracer
+RealTimeGLTFViewer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RealTimeGLTFViewer
+.PHONY : RealTimeGLTFViewer
 
 # fast build rule for target.
-Real-Time-Voxel-Path-Tracer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build
-.PHONY : Real-Time-Voxel-Path-Tracer/fast
+RealTimeGLTFViewer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/build
+.PHONY : RealTimeGLTFViewer/fast
 
-src/Camera.o: src/Camera.cpp.o
-.PHONY : src/Camera.o
-
-# target to build an object file
-src/Camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Camera.cpp.o
-.PHONY : src/Camera.cpp.o
-
-src/Camera.i: src/Camera.cpp.i
-.PHONY : src/Camera.i
-
-# target to preprocess a source file
-src/Camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Camera.cpp.i
-.PHONY : src/Camera.cpp.i
-
-src/Camera.s: src/Camera.cpp.s
-.PHONY : src/Camera.s
-
-# target to generate assembly for a file
-src/Camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Camera.cpp.s
-.PHONY : src/Camera.cpp.s
-
-src/HitRecord.o: src/HitRecord.cpp.o
-.PHONY : src/HitRecord.o
+src/glad.o: src/glad.c.o
+.PHONY : src/glad.o
 
 # target to build an object file
-src/HitRecord.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/HitRecord.cpp.o
-.PHONY : src/HitRecord.cpp.o
+src/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/src/glad.c.o
+.PHONY : src/glad.c.o
 
-src/HitRecord.i: src/HitRecord.cpp.i
-.PHONY : src/HitRecord.i
-
-# target to preprocess a source file
-src/HitRecord.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/HitRecord.cpp.i
-.PHONY : src/HitRecord.cpp.i
-
-src/HitRecord.s: src/HitRecord.cpp.s
-.PHONY : src/HitRecord.s
-
-# target to generate assembly for a file
-src/HitRecord.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/HitRecord.cpp.s
-.PHONY : src/HitRecord.cpp.s
-
-src/Image.o: src/Image.cpp.o
-.PHONY : src/Image.o
-
-# target to build an object file
-src/Image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Image.cpp.o
-.PHONY : src/Image.cpp.o
-
-src/Image.i: src/Image.cpp.i
-.PHONY : src/Image.i
+src/glad.i: src/glad.c.i
+.PHONY : src/glad.i
 
 # target to preprocess a source file
-src/Image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Image.cpp.i
-.PHONY : src/Image.cpp.i
+src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/src/glad.c.i
+.PHONY : src/glad.c.i
 
-src/Image.s: src/Image.cpp.s
-.PHONY : src/Image.s
-
-# target to generate assembly for a file
-src/Image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Image.cpp.s
-.PHONY : src/Image.cpp.s
-
-src/Material.o: src/Material.cpp.o
-.PHONY : src/Material.o
-
-# target to build an object file
-src/Material.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Material.cpp.o
-.PHONY : src/Material.cpp.o
-
-src/Material.i: src/Material.cpp.i
-.PHONY : src/Material.i
-
-# target to preprocess a source file
-src/Material.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Material.cpp.i
-.PHONY : src/Material.cpp.i
-
-src/Material.s: src/Material.cpp.s
-.PHONY : src/Material.s
+src/glad.s: src/glad.c.s
+.PHONY : src/glad.s
 
 # target to generate assembly for a file
-src/Material.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Material.cpp.s
-.PHONY : src/Material.cpp.s
-
-src/Plane.o: src/Plane.cpp.o
-.PHONY : src/Plane.o
-
-# target to build an object file
-src/Plane.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Plane.cpp.o
-.PHONY : src/Plane.cpp.o
-
-src/Plane.i: src/Plane.cpp.i
-.PHONY : src/Plane.i
-
-# target to preprocess a source file
-src/Plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Plane.cpp.i
-.PHONY : src/Plane.cpp.i
-
-src/Plane.s: src/Plane.cpp.s
-.PHONY : src/Plane.s
-
-# target to generate assembly for a file
-src/Plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Plane.cpp.s
-.PHONY : src/Plane.cpp.s
-
-src/Ray.o: src/Ray.cpp.o
-.PHONY : src/Ray.o
-
-# target to build an object file
-src/Ray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.o
-.PHONY : src/Ray.cpp.o
-
-src/Ray.i: src/Ray.cpp.i
-.PHONY : src/Ray.i
-
-# target to preprocess a source file
-src/Ray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.i
-.PHONY : src/Ray.cpp.i
-
-src/Ray.s: src/Ray.cpp.s
-.PHONY : src/Ray.s
-
-# target to generate assembly for a file
-src/Ray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Ray.cpp.s
-.PHONY : src/Ray.cpp.s
-
-src/Renderer.o: src/Renderer.cpp.o
-.PHONY : src/Renderer.o
-
-# target to build an object file
-src/Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.o
-.PHONY : src/Renderer.cpp.o
-
-src/Renderer.i: src/Renderer.cpp.i
-.PHONY : src/Renderer.i
-
-# target to preprocess a source file
-src/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.i
-.PHONY : src/Renderer.cpp.i
-
-src/Renderer.s: src/Renderer.cpp.s
-.PHONY : src/Renderer.s
-
-# target to generate assembly for a file
-src/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Renderer.cpp.s
-.PHONY : src/Renderer.cpp.s
-
-src/Scene.o: src/Scene.cpp.o
-.PHONY : src/Scene.o
-
-# target to build an object file
-src/Scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.o
-.PHONY : src/Scene.cpp.o
-
-src/Scene.i: src/Scene.cpp.i
-.PHONY : src/Scene.i
-
-# target to preprocess a source file
-src/Scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.i
-.PHONY : src/Scene.cpp.i
-
-src/Scene.s: src/Scene.cpp.s
-.PHONY : src/Scene.s
-
-# target to generate assembly for a file
-src/Scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Scene.cpp.s
-.PHONY : src/Scene.cpp.s
-
-src/Triangle.o: src/Triangle.cpp.o
-.PHONY : src/Triangle.o
-
-# target to build an object file
-src/Triangle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.o
-.PHONY : src/Triangle.cpp.o
-
-src/Triangle.i: src/Triangle.cpp.i
-.PHONY : src/Triangle.i
-
-# target to preprocess a source file
-src/Triangle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.i
-.PHONY : src/Triangle.cpp.i
-
-src/Triangle.s: src/Triangle.cpp.s
-.PHONY : src/Triangle.s
-
-# target to generate assembly for a file
-src/Triangle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/Triangle.cpp.s
-.PHONY : src/Triangle.cpp.s
+src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/src/glad.c.s
+.PHONY : src/glad.c.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -358,7 +166,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -366,32 +174,8 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/utils.o: src/utils.cpp.o
-.PHONY : src/utils.o
-
-# target to build an object file
-src/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.o
-.PHONY : src/utils.cpp.o
-
-src/utils.i: src/utils.cpp.i
-.PHONY : src/utils.i
-
-# target to preprocess a source file
-src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.i
-.PHONY : src/utils.cpp.i
-
-src/utils.s: src/utils.cpp.s
-.PHONY : src/utils.s
-
-# target to generate assembly for a file
-src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/src/utils.cpp.s
-.PHONY : src/utils.cpp.s
 
 # Help Target
 help:
@@ -401,40 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Real-Time-Voxel-Path-Tracer"
-	@echo "... src/Camera.o"
-	@echo "... src/Camera.i"
-	@echo "... src/Camera.s"
-	@echo "... src/HitRecord.o"
-	@echo "... src/HitRecord.i"
-	@echo "... src/HitRecord.s"
-	@echo "... src/Image.o"
-	@echo "... src/Image.i"
-	@echo "... src/Image.s"
-	@echo "... src/Material.o"
-	@echo "... src/Material.i"
-	@echo "... src/Material.s"
-	@echo "... src/Plane.o"
-	@echo "... src/Plane.i"
-	@echo "... src/Plane.s"
-	@echo "... src/Ray.o"
-	@echo "... src/Ray.i"
-	@echo "... src/Ray.s"
-	@echo "... src/Renderer.o"
-	@echo "... src/Renderer.i"
-	@echo "... src/Renderer.s"
-	@echo "... src/Scene.o"
-	@echo "... src/Scene.i"
-	@echo "... src/Scene.s"
-	@echo "... src/Triangle.o"
-	@echo "... src/Triangle.i"
-	@echo "... src/Triangle.s"
+	@echo "... RealTimeGLTFViewer"
+	@echo "... src/glad.o"
+	@echo "... src/glad.i"
+	@echo "... src/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/utils.o"
-	@echo "... src/utils.i"
-	@echo "... src/utils.s"
 .PHONY : help
 
 

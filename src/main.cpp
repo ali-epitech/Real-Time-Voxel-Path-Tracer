@@ -1,90 +1,172 @@
+#include "glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
-#include "Renderer.h"
-#include "Triangle.h"
-#include "Material.h"
-#include "Camera.h"
+#include <vector>
+#include <string>
+#include <filesystem>
 
-int main()
-{
-    Scene scene;
+namespace fs = std::filesystem;
 
-    // ----- Materials -----
-    auto red   = std::make_shared<Lambertian>(glm::vec3(0.8f, 0.2f, 0.2f));
-    auto green = std::make_shared<Lambertian>(glm::vec3(0.2f, 0.8f, 0.2f));
-    auto white = std::make_shared<Lambertian>(glm::vec3(0.8f, 0.8f, 0.8f));
-    auto light = std::make_shared<DiffuseLight>(glm::vec3(15.0f, 15.0f, 15.0f));
+// Simple container for OpenGL mesh
+struct GLMesh {
+    GLuint VAO = 0, VBO = 0, EBO = 0;
+    size_t indexCount = 0;
+    glm::vec3 color;
+};
 
-    // ----- Corners -----
-    glm::vec3 floorBL(-5, 0, -10);  // bottom-left floor
-    glm::vec3 floorBR( 5, 0, -10);  // bottom-right floor
-    glm::vec3 floorFR( 5, 0,  5);   // front-right floor
-    glm::vec3 floorFL(-5, 0,  5);   // front-left floor
+// Process Assimp node recursively
+void processNode(const aiNode* node, const aiScene* scene, std::vector<GLMesh>& outMeshes) {
+    for (unsigned int i = 0; i < node->mNumMeshes; i++) {
+        const aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
+        GLMesh glmesh;
 
-    glm::vec3 leftBL(-5, 0, -10);   // left wall bottom-left
-    glm::vec3 leftTL(-5, 5, -10);   // left wall top-left
-    glm::vec3 leftTR(-5, 5,  5);    // left wall top-right
-    glm::vec3 leftBR(-5, 0,  5);    // left wall bottom-right
+        // --- Extract color ---
+        aiColor3D color(1.0f, 0.7f, 0.7f);
+        if (scene->mMaterials[mesh->mMaterialIndex]->Get(AI_MATKEY_COLOR_DIFFUSE, color) != AI_SUCCESS)
+            color = aiColor3D(1.0f, 0.7f, 0.7f);
+        glmesh.color = glm::vec3(color.r, color.g, color.b);
 
-    glm::vec3 rightBL(5, 0, -10);   // right wall bottom-left
-    glm::vec3 rightBR(5, 0,  5);    // right wall bottom-right
-    glm::vec3 rightTR(5, 5,  5);    // right wall top-right
-    glm::vec3 rightTL(5, 5, -10);   // right wall top-left
+        // --- Flatten vertices ---
+        std::vector<float> vertices;
+        for (unsigned int v = 0; v < mesh->mNumVertices; v++) {
+            vertices.push_back(mesh->mVertices[v].x);
+            vertices.push_back(mesh->mVertices[v].y);
+            vertices.push_back(mesh->mVertices[v].z);
+        }
 
-    glm::vec3 topBL(-5, 5, -10);    // ceiling back-left
-    glm::vec3 topBR( 5, 5, -10);    // ceiling back-right
-    glm::vec3 topFR( 5, 5,  5);     // ceiling front-right
-    glm::vec3 topFL(-5, 5,  5);     // ceiling front-left
+        // --- Flatten indices ---
+        std::vector<unsigned int> indices;
+        for (unsigned int f = 0; f < mesh->mNumFaces; f++)
+            for (unsigned int j = 0; j < mesh->mFaces[f].mNumIndices; j++)
+                indices.push_back(mesh->mFaces[f].mIndices[j]);
+        glmesh.indexCount = indices.size();
 
-    glm::vec3 backBL(-5, 0, -10);   // back wall bottom-left
-    glm::vec3 backBR( 5, 0, -10);   // back wall bottom-right
-    glm::vec3 backTR( 5, 5, -10);   // back wall top-right
-    glm::vec3 backTL(-5, 5, -10);   // back wall top-left
+        // --- Setup OpenGL buffers ---
+        glGenVertexArrays(1, &glmesh.VAO);
+        glGenBuffers(1, &glmesh.VBO);
+        glGenBuffers(1, &glmesh.EBO);
 
-    glm::vec3 lightBL(-1.5f, 4.9f, -4);
-    glm::vec3 lightBR( 1.5f, 4.9f, -4);
-    glm::vec3 lightTR( 1.5f, 4.9f, -7);
-    glm::vec3 lightTL(-1.5f, 4.9f, -7);
+        glBindVertexArray(glmesh.VAO);
 
-    // ----- Geometry -----
-    // Floor
-    scene.add(std::make_shared<Triangle>(floorBL, floorBR, floorFR, white));
-    scene.add(std::make_shared<Triangle>(floorBL, floorFR, floorFL, white));
+        glBindBuffer(GL_ARRAY_BUFFER, glmesh.VBO);
+        glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
 
-    // Left wall
-    scene.add(std::make_shared<Triangle>(leftBL, leftTL, leftTR, red));
-    scene.add(std::make_shared<Triangle>(leftBL, leftTR, leftBR, red));
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, glmesh.EBO);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
-    // Right wall
-    scene.add(std::make_shared<Triangle>(rightBL, rightBR, rightTR, green));
-    scene.add(std::make_shared<Triangle>(rightBL, rightTR, rightTL, green));
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+        glEnableVertexAttribArray(0);
 
-    // Ceiling / Top wall
-    scene.add(std::make_shared<Triangle>(topBL, topBR, topFR, white));
-    scene.add(std::make_shared<Triangle>(topBL, topFR, topFL, white));
+        glBindVertexArray(0);
 
-    // Back wall
-    scene.add(std::make_shared<Triangle>(backBL, backBR, backTR, white));
-    scene.add(std::make_shared<Triangle>(backBL, backTR, backTL, white));
+        outMeshes.push_back(glmesh);
+    }
 
-    // Ceiling light
-    scene.add(std::make_shared<Triangle>(lightBL, lightBR, lightTR, light));
-    scene.add(std::make_shared<Triangle>(lightBL, lightTR, lightTL, light));
+    for (unsigned int i = 0; i < node->mNumChildren; i++)
+        processNode(node->mChildren[i], scene, outMeshes);
+}
 
-    // ----- Camera -----
-    Camera camera(
-        glm::vec3(0.0f, 2.5f, 15.0f), // pulled back to see the bigger room
-        glm::vec3(0.0f, 0.0f, -1.0f),
-        45.0f,
-        0.001f,
-        1000.0f
-    );
+// Load all GLTF/GLB files in folder
+void loadSceneFolder(const std::string& folder, std::vector<GLMesh>& meshes) {
+    for (const auto& entry : fs::directory_iterator(folder)) {
+        if (entry.is_regular_file()) {
+            std::string path = entry.path().string();
+            if (path.ends_with(".gltf") || path.ends_with(".glb")) {
+                Assimp::Importer importer;
+                const aiScene* scene = importer.ReadFile(
+                    path,
+                    aiProcess_Triangulate | aiProcess_GenNormals | aiProcess_JoinIdenticalVertices
+                );
+                if (!scene) {
+                    std::cerr << "Failed to load: " << path << " Error: " << importer.GetErrorString() << std::endl;
+                    continue;
+                }
+                processNode(scene->mRootNode, scene, meshes);
+                std::cout << "Loaded: " << path << std::endl;
+            }
+        }
+    }
+}
 
-    // ----- Renderer -----
-    glm::vec3 background_color(0.0f);
-    Renderer renderer(800, 600, 1000, 5, background_color);
-    renderer.render(camera, scene);
-    renderer.saveOutput("output.ppm");
+int main() {
+    if (!glfwInit()) { std::cerr << "GLFW init failed\n"; return -1; }
 
-    std::cout << "Done! Open output.ppm." << std::endl;
+    GLFWwindow* window = glfwCreateWindow(800, 600, "GLTF Folder Viewer", nullptr, nullptr);
+    if (!window) { std::cerr << "Failed to create window\n"; glfwTerminate(); return -1; }
+    glfwMakeContextCurrent(window);
+
+    // <<< Initialize GLAD here >>>
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cerr << "Failed to initialize GLAD\n";
+        return -1;
+    }
+
+    glEnable(GL_DEPTH_TEST);
+
+    // --- Load all meshes from folder ---
+    std::vector<GLMesh> meshes;
+    loadSceneFolder("../scene", meshes);
+    std::cout << "Total meshes loaded: " << meshes.size() << std::endl;
+
+    // --- Simple shader ---
+    const char* vertSrc = R"(#version 330 core
+    layout(location=0) in vec3 aPos;
+    uniform mat4 uModel;
+    uniform mat4 uView;
+    uniform mat4 uProjection;
+    void main(){ gl_Position = uProjection * uView * uModel * vec4(aPos,1.0); })";
+
+    const char* fragSrc = R"(#version 330 core
+    out vec4 FragColor;
+    uniform vec3 uColor;
+    void main(){ FragColor = vec4(uColor,1.0); })";
+
+    auto compileShader = [](GLenum type, const char* src) {
+        GLuint s = glCreateShader(type);
+        glShaderSource(s, 1, &src, nullptr);
+        glCompileShader(s);
+        int success; glGetShaderiv(s, GL_COMPILE_STATUS, &success);
+        if (!success) { char info[512]; glGetShaderInfoLog(s, 512, nullptr, info); std::cerr << info << std::endl; }
+        return s;
+    };
+
+    GLuint shader = glCreateProgram();
+    GLuint vs = compileShader(GL_VERTEX_SHADER, vertSrc);
+    GLuint fs = compileShader(GL_FRAGMENT_SHADER, fragSrc);
+    glAttachShader(shader, vs); glAttachShader(shader, fs);
+    glLinkProgram(shader);
+    glDeleteShader(vs); glDeleteShader(fs);
+
+    // --- Camera ---
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.f/600.f, 0.1f, 100.f);
+    glm::mat4 view = glm::lookAt(glm::vec3(0,5,15), glm::vec3(0,2,0), glm::vec3(0,1,0));
+
+    while (!glfwWindowShouldClose(window)) {
+        glClearColor(0.1f,0.1f,0.1f,1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        glUseProgram(shader);
+        glUniformMatrix4fv(glGetUniformLocation(shader,"uView"),1,GL_FALSE,glm::value_ptr(view));
+        glUniformMatrix4fv(glGetUniformLocation(shader,"uProjection"),1,GL_FALSE,glm::value_ptr(projection));
+
+        for (auto& m : meshes) {
+            glBindVertexArray(m.VAO);
+            glm::mat4 model = glm::mat4(1.0f);
+            glUniformMatrix4fv(glGetUniformLocation(shader,"uModel"),1,GL_FALSE,glm::value_ptr(model));
+            glUniform3fv(glGetUniformLocation(shader,"uColor"),1,glm::value_ptr(m.color));
+            glDrawElements(GL_TRIANGLES, m.indexCount, GL_UNSIGNED_INT, 0);
+        }
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
     return 0;
 }

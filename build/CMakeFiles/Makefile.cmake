@@ -7,9 +7,11 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/CMakeLists.txt"
+  "/home/ali/Desktop/gtf-glb-lv/CMakeLists.txt"
+  "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeSystem.cmake"
+  "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
@@ -18,15 +20,20 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/share/cmake/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+  "/usr/share/cmake/Modules/Linker/GNU-C.cmake"
   "/usr/share/cmake/Modules/Linker/GNU-CXX.cmake"
   "/usr/share/cmake/Modules/Linker/GNU.cmake"
   "/usr/share/cmake/Modules/Platform/Linker/GNU.cmake"
+  "/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake"
   "/usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake"
   "/usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake"
+  "/usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake"
@@ -47,5 +54,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/DependInfo.cmake"
+  "CMakeFiles/RealTimeGLTFViewer.dir/DependInfo.cmake"
   )

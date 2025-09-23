@@ -54,20 +54,20 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/Desktop/Real-Time-Voxel-Path-Tracer
+CMAKE_SOURCE_DIR = /home/ali/Desktop/gtf-glb-lv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build
+CMAKE_BINARY_DIR = /home/ali/Desktop/gtf-glb-lv/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/all
+all: CMakeFiles/RealTimeGLTFViewer.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/codegen
+codegen: CMakeFiles/RealTimeGLTFViewer.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/clean
+clean: CMakeFiles/RealTimeGLTFViewer.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Real-Time-Voxel-Path-Tracer.dir
+# Target rules for target CMakeFiles/RealTimeGLTFViewer.dir
 
 # All Build rule for target.
-CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target Real-Time-Voxel-Path-Tracer"
-.PHONY : CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/all
+CMakeFiles/RealTimeGLTFViewer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ali/Desktop/gtf-glb-lv/build/CMakeFiles --progress-num=1,2,3 "Built target RealTimeGLTFViewer"
+.PHONY : CMakeFiles/RealTimeGLTFViewer.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles 12
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles 0
-.PHONY : CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/rule
+CMakeFiles/RealTimeGLTFViewer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/gtf-glb-lv/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/RealTimeGLTFViewer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/gtf-glb-lv/build/CMakeFiles 0
+.PHONY : CMakeFiles/RealTimeGLTFViewer.dir/rule
 
 # Convenience name for target.
-Real-Time-Voxel-Path-Tracer: CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/rule
-.PHONY : Real-Time-Voxel-Path-Tracer
+RealTimeGLTFViewer: CMakeFiles/RealTimeGLTFViewer.dir/rule
+.PHONY : RealTimeGLTFViewer
 
 # codegen rule for target.
-CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ali/Desktop/Real-Time-Voxel-Path-Tracer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Finished codegen for target Real-Time-Voxel-Path-Tracer"
-.PHONY : CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/codegen
+CMakeFiles/RealTimeGLTFViewer.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ali/Desktop/gtf-glb-lv/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target RealTimeGLTFViewer"
+.PHONY : CMakeFiles/RealTimeGLTFViewer.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/build.make CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/clean
-.PHONY : CMakeFiles/Real-Time-Voxel-Path-Tracer.dir/clean
+CMakeFiles/RealTimeGLTFViewer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RealTimeGLTFViewer.dir/build.make CMakeFiles/RealTimeGLTFViewer.dir/clean
+.PHONY : CMakeFiles/RealTimeGLTFViewer.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

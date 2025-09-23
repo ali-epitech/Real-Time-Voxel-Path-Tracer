@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/RealTimeGLTFViewer.dir/link.d CMakeFiles/RealTimeGLTFViewer.dir/src/glad.c.o CMakeFiles/RealTimeGLTFViewer.dir/src/main.cpp.o -o RealTimeGLTFViewer  -lglfw -lassimp -lGL -ldl -lpthread
