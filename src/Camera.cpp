@@ -23,7 +23,7 @@ Ray Camera::getRay(float u, float v, int width, int height) const
     float fovScale = tan(glm::radians(fov) * 0.5f);
 
     float px = u * aspect * fovScale;
-    float py = v * fovScale;
+    float py = -v * fovScale;
 
     glm::vec3 dir = glm::normalize(forward + px * right + py * up);
     return Ray(origin, dir);

@@ -1,27 +1,78 @@
-#include <iostream>
-#include <glm/gtx/string_cast.hpp>
 #include "Scene.h"
+#include <assimp/Importer.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtx/norm.hpp>
+#include <limits>
+#include <cstdlib>
 
-bool Scene::hit(const Ray& ray, float t_min, float t_max, HitRecord& rec, std::shared_ptr<Material>& mat) const
+// ---------------------------------------------------
+// Main Scene hit function
+// ---------------------------------------------------
+RayInteraction Scene::hit(const Ray& ray, float tMin, float tMax) const
 {
-    bool hitAnything = false;
-    float closestSoFar = t_max;
+    RayInteraction result; // default: no hit
+    if (!ai_scene)
+        return result;
 
-    for (const auto& object : objects) {
-        //std::cout << "[SCENE] Testing object...\n";
-        if (object->hit(ray, t_min, closestSoFar, rec, mat)) {
-            hitAnything = true;
-            closestSoFar = rec.t;
-            //std::cout << "[SCENE] Hit! t=" << closestSoFar << "\n";
+    float closest = tMax;
+
+    // Iterate over meshes
+    for (unsigned int m = 0; m < ai_scene->mNumMeshes; ++m) {
+        aiMesh* mesh = ai_scene->mMeshes[m];
+
+        for (unsigned int f = 0; f < mesh->mNumFaces; ++f) {
+            const aiFace& face = mesh->mFaces[f];
+            glm::vec3 v0(mesh->mVertices[face.mIndices[0]].x,mesh->mVertices[face.mIndices[0]].y,mesh->mVertices[face.mIndices[0]].z);
+            glm::vec3 v1(mesh->mVertices[face.mIndices[1]].x,mesh->mVertices[face.mIndices[1]].y,mesh->mVertices[face.mIndices[1]].z);
+            glm::vec3 v2(mesh->mVertices[face.mIndices[2]].x,mesh->mVertices[face.mIndices[2]].y,mesh->mVertices[face.mIndices[2]].z);
+
+            float tHit;
+            glm::vec3 nHit;
+            if (rayTriangleIntersect(ray, v0, v1, v2, tHit, nHit)) {
+                if (tHit < closest && tHit > tMin) {
+                    closest = tHit;
+
+                    // Directly assign the RayInteraction
+                    result.compute(ray,ray.origin + tHit * ray.dir,nHit,ai_scene->mMaterials[mesh->mMaterialIndex], m, f);
+                    result.hit = true; // mark hit
+                }
+            }
         }
     }
-
-    return hitAnything;
+    return result;
 }
 
-
-
-void Scene::add(const std::shared_ptr<Hittable>& object)
+// ---------------------------------------------------
+// Ray-triangle intersection (Möller–Trumbore)
+// ---------------------------------------------------
+bool Scene::rayTriangleIntersect(
+    const Ray& ray,
+    const glm::vec3& v0,
+    const glm::vec3& v1,
+    const glm::vec3& v2,
+    float& tHit,
+    glm::vec3& nHit) const
 {
-    this->objects.push_back(object);
+    const float EPSILON = 1e-8f;
+    glm::vec3 edge1 = v1 - v0;
+    glm::vec3 edge2 = v2 - v0;
+    glm::vec3 h = glm::cross(ray.dir, edge2);
+    float a = glm::dot(edge1, h);
+    if (std::abs(a) < EPSILON)
+        return false;
+
+    float f = 1.0f / a;
+    glm::vec3 s = ray.origin - v0;
+    float u = f * glm::dot(s, h);
+    if (u < 0.0f || u > 1.0f) return false;
+
+    glm::vec3 q = glm::cross(s, edge1);
+    float v = f * glm::dot(ray.dir, q);
+    if (v < 0.0f || u + v > 1.0f) return false;
+
+    tHit = f * glm::dot(edge2, q);
+    if (tHit < EPSILON) return false;
+
+    nHit = glm::normalize(glm::cross(edge1, edge2));
+    return true;
 }
